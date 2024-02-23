@@ -1,0 +1,743 @@
+/* Developer: Mohammed (@ tech-moh-logy)
+Project Type: E-Commerce Website (Movie Site) – in-progress
+Project Name: Cinema Curry  */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Better font choice */
+    background-color: #1a1a1a; /* Dark background color */
+    color: #fff;
+    font-family: "Reem Kufi", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background: linear-gradient(rgb(0, 0, 0), rgb(11, 11, 11));
+}
+
+svg {
+    width: 30px;
+    fill: #fff; /* Set SVG fill color to white */
+}
+
+a {
+    text-decoration: none;
+    color: #BB86FC; /* Links in vibrant purple color */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+a:hover {
+    color: #CE93D8; /* Lighter shade of purple on hover */
+}
+
+button {
+    cursor: pointer;
+    border: none; /* Remove default button border */
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: 0.5s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.icon-cart {
+    position: relative;
+}
+
+
+/* Hover Effects */
+.icon-cart:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 0.75rem rgb(220, 187, 20));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.icon-cart span {
+    position: absolute;
+    background-color: #f44336; /* Red color for notification */
+    width: 20px; /* Reduce width for a more subtle notification */
+    height: 20px; /* Reduce height for a more subtle notification */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 10px; /* Adjust top position */
+    right: -10px; /* Adjust right position */
+    font-size: 0.8rem; /* Adjust font size for better fit */
+}
+
+.title {
+    font-size: 3.25rem;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(to right, #a58d07, #ffc100); /* Gradient background */
+    -webkit-background-clip: text; /* Apply gradient as text color */
+    -webkit-text-fill-color: transparent; /* Make the text transparent to show the gradient */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Keep the realistic 3D effect */
+}
+
+
+
+
+/* General Styles */
+.cartTab {
+    filter: drop-shadow(0 0 0.75rem rgb(86, 83, 83));
+    box-shadow: 10px 10px 10px #a08845;
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)); /* Gradient background */
+    color: #fff;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    z-index: 999;
+    transition: right 0.5s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    border-left: 6px solid goldenrod; /* Accent border */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 10px; /* Rounded corners for modern look */
+}
+
+.cartTab h1 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 600; /* Bold font weight for title */
+    font-size: 2rem; /* Larger font size for the title */
+}
+
+.cartTab .btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.cartTab button {
+    border: 1px solid #000000;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #000000;
+    font-size: .9rem;
+    background-color: gold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cartTab button:hover {
+    color: rgb(0, 0, 0); 
+    background-color: gold;
+    box-shadow: 1px 1px 10px gold;
+    /* border-color: #1a1a1a; */
+    border: 1px solid rgb(49, 36, 2);
+}
+
+.cartTab .close {
+    color: #ede8e8;
+    background-color: #8d1d1b;
+    padding: 12px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    /* transition: right 0.5s ease-in-out; */
+    border: 1px solid #520f0f;
+}
+
+.cartTab .close:hover {
+    /* background-color: #D32F2F; */
+    color: #f9f9f9; 
+    background-color: #6f0707;
+    box-shadow: 1px 1px 10px #b01818;
+    /* border-color: #1a1a1a; */
+    border: 0.5px solid #E8E8E8;
+}
+
+.listCart {
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.listCart::-webkit-scrollbar {
+    width: 10px;
+}
+
+.listCart::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+
+/* .cartTab{
+    width: 400px;
+    max-width: 100%;
+    background-color: #130e03;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartTab button{
+    color: white;
+    font-size: 1rem;
+    background-color: #157c0e;
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartTab .close{
+    color:white;
+    background-color: #be1111;
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+} */
+/*  */
+/* .cartTab{
+    right: -450px;
+    transition: 0.5s;
+} */
+body.activeTabCart .cartTab{
+    right: 0;
+}
+body.activeTabCart .container{
+    transform: translateX(-250px);
+}
+
+
+
+
+
+/* Products */
+/* 
+.listProduct .item img{
+    width: 90%;
+    filter: drop-shadow(0 10px 20px rgba(17, 118, 123, 0.6));
+}
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.listProduct .item{
+    background-color: #0a140a; 
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+}
+
+.listProduct .item h2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(236, 141, 17);
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+.listProduct .item p{
+    margin-bottom: 10px;
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: large;
+}
+.listProduct .item .price{
+    letter-spacing: 2px;
+    font-size: small;
+}
+.listProduct .item button {
+    background-color: #353432;
+    color: #eb0b0b;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.listProduct .item button:hover{
+    background-color: #1c1c1a;
+    color: #eb0b0b;
+}
+
+.listCart .item img{
+    width: 100%;
+}
+.listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+    cursor: auto;
+}
+.listCart .quantity{
+    display: flex;
+}
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+} */
+
+/* Product List Styles */
+.listProduct .item img {
+    width: 90%;
+    filter: drop-shadow(0 10px 20px rgba(17, 118, 123, 0.6));
+}
+
+.listProduct {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.listProduct .item:hover,
+.listProduct .item:hover button {
+    box-shadow: 1px 1px 10px gold;
+}
+
+.listProduct .item {
+    background-color: #1f1f1f; /* Dark background color */
+    padding: 20px;
+    border-radius: 20px;
+    color: #fff;
+    position: relative; /* Position for golden accent */
+}
+
+.listProduct .item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.8), rgba(255, 215, 0, 0.5)); /* Golden accent gradient */
+    z-index: -1;
+}
+
+.listProduct .item h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffcc00; /* Golden text color */
+    font-size: 1.5rem; /* Adjusted font size */
+    margin-bottom: 10px;
+}
+
+.listProduct .item p {
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem; /* Adjusted font size */
+}
+
+.listProduct .item .price {
+    letter-spacing: 1px; /* Slightly reduced letter spacing */
+    font-size: 0.8rem; /* Adjusted font size */
+}
+
+.listProduct .item button {
+    background-color: #353432;
+    color: #ffcc00;
+    border: none;
+    padding: 8px 16px; /* Adjusted padding */
+    margin-top: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.listProduct .item button:hover {
+    background-color: #1c1c1a;
+    color: #ffcc00;
+}
+
+/* Cart List Styles */
+.listCart .item img {
+    width: 100%;
+}
+
+.listCart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.listCart .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+}
+
+.listCart .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+    cursor: auto;
+}
+
+.listCart .quantity {
+    display: flex;
+}
+
+.listCart .item:nth-child(even) {
+    background-color: rgba(238, 187, 136, 0.1); /* Lighter background color */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  details */
+
+/* detail page */
+
+/* .detail{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    text-align: left;
+}
+.detail .image img{
+    width: 100%;
+}
+.detail .image{
+    position: relative;
+}
+.detail .image::before{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    content: '';
+    background-color: #94817733;
+    z-index: -1;
+    border-radius: 190px 100px 170px 180px;
+    left: calc(50% - 150px);
+    top: 50px;
+
+}
+.detail .name{
+    font-size: xxx-large;
+    padding: 40px 0 0 0;
+    margin: 0 0 10px 0;
+}
+.detail .price{
+    font-weight: bold;
+    font-size: x-large;
+    letter-spacing: 7px;
+    margin-bottom: 20px;
+}
+.detail .buttons{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.detail .buttons button{
+    background-color: #eee;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-size: large;
+}
+.detail .buttons svg{
+    width: 15px;
+}
+.detail .buttons span{
+    background-color: #555454;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.detail .buttons button:nth-child(2){
+    background-color: #2F2F2F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    box-shadow: 0 10px 20px #2F2F2F77;
+}
+.detail .description{
+    font-weight: 300;
+} */
+/* Product Detail Styles */
+.detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    text-align: left;
+}
+
+.detail .image img {
+    width: 100%;
+    border-radius: 20px; /* Add border radius for a smoother look */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.detail .image {
+    position: relative;
+}
+
+.detail .image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, rgba(255, 215, 0, 0) 70%); /* Golden gradient */
+    z-index: -1;
+    border-radius: 20px; /* Match border radius of image */
+    left: 0;
+    top: 0;
+}
+
+.detail .name {
+    font-size: 5em; /* Increase font size */
+    padding-top: 40px; /* Adjust padding for better alignment */
+    margin-bottom: 20px; /* Increase margin for better separation */
+    color: #363533; /* Darker text color for better readability */
+    text-transform: uppercase;
+     /* Uppercase text for emphasis */
+}
+
+.detail .price {
+    font-weight: bold;
+    font-size: 1.8rem; /* Adjusted font size */
+    letter-spacing: 2px; /* Increased letter spacing for impact */
+    margin-bottom: 30px; /* Increase margin for better separation */
+    color: #ffcc00; /* Golden text color */
+}
+
+.detail .buttons {
+    font-weight: 900;
+    display: flex;
+    gap: 20px; /* Adjusted gap between buttons */
+    margin-bottom: 20px; /* Increase margin for better separation */
+}
+
+.detail .buttons button {
+    background-color: transparent; /* Transparent button background */
+    border: 2px solid #ffcc00; /* Golden border */
+    padding: 15px 30px; /* Adjusted padding for consistent button size */
+    border-radius: 20px; /* Increase border radius for smoother edges */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem; /* Adjusted font size */
+    color: #ffcc00; /* Golden text color */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+.detail .buttons button:hover {
+    background-color: #ffcc00; /* Golden background on hover */
+    color: #222; /* Darker text color on hover */
+    border-color: #ffcc00; /* Golden border color on hover */
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.4); /* Golden shadow */
+}
+
+.detail .buttons span {
+    background-color: transparent;
+    width: 40px; /* Maintain size of span */
+    height: 40px; /* Maintain size of span */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 20px; /* Adjusted margin for better alignment */
+}
+
+.detail .buttons button:nth-child(2) {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff; /* White border */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.4); /* White shadow */
+}
+
+
+/*  */
+
+@media only screen and (max-width: 992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .detail{
+        grid-template-columns:  40% 1fr;
+    }
+    .detail .buttons {
+        font-size: 2rem;
+    }
+}
+
+
+/* mobile */
+@media only screen and (max-width: 767px) {
+    .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .detail{
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+    .detail .image img{
+        width: unset;
+        height: 40vh;
+    } 
+    /* .detail .name{
+        font-size: x-large;
+        margin: 0;
+
+    } */
+
+    .detail .name{
+        font-size: 3rem;
+        margin: 0;
+
+    }
+    .detail .buttons button{
+        font-size: small;
+    }
+    .detail .buttons{
+        justify-content: center;
+    }
+    .detail .buttons button {
+        font-size: small;
+    }
+    .detail .buttons {
+        justify-content: center;
+    }
+    
+}
+
+
+
+/* Default button styles */
+.detail .buttons button {
+    font-size: 1rem; /* Adjust as needed */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+    border-radius: 10px; /* Adjust border radius for smoother edges */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 767px) {
+    .detail .buttons button {
+        font-size: 0.8rem; /* Decrease font size for smaller screens */
+        padding: 8px 16px; /* Decrease padding for smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+footer {
+    /* background-color: #181717; */
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.5rem;
+  }
+  
+  .footer-content h2 {
+    margin-top: 10px;
+  }
+  
+  .footer-content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .footer-info {
+    margin-top: 20px;
+  }
+  
+  .footer-links {
+    margin-top: 20px;
+  }
+  
+  .footer-links a {
+    color: #333;
+    text-decoration: underline;
+  }
+
+  
+
+
+  
+                    /* .main.title {
+                        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                        font-size: xx-large;
+                        color: gold;
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the values for a realistic 3D effect */
+                    /* } */ 
