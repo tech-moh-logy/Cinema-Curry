@@ -4,6 +4,9 @@
 
 <img src="https://media.giphy.com/media/HBFbHqnvcv0eWhKjPF/giphy.gif" style="width:100vw;" alt="Alt Text">
 
+[Live Demo of Cinema Curry](https://mohammeddigitalsage.github.io/Assignment-1-Zoo/)
+
+   
 Welcome to Cinema Curry, your ultimate destination for exploring and acquiring Indian and Desi movies. Immerse yourself in the vibrant world of Indian cinema with our curated collection of Bollywood blockbusters, regional treasures, and timeless classics.
 
 ### Features:
