@@ -1,13 +1,15 @@
 ## Cinema Curry: Your Gateway to Indian/Desi Movies
 
-<!-- Embedded Gist -->
-
-<img src="https://media.giphy.com/media/HBFbHqnvcv0eWhKjPF/giphy.gif" style="width:100vw;" alt="Alt Text">
+Welcome to Cinema Curry, your ultimate destination for exploring and acquiring Indian and Desi movies. Immerse yourself in the vibrant world of Indian cinema with our curated collection of Bollywood blockbusters, regional treasures, and timeless classics.
 
 [Live Demo of Cinema Curry](https://cinema-curry-mohammed.netlify.app) (work in-progress)
 
-   
-Welcome to Cinema Curry, your ultimate destination for exploring and acquiring Indian and Desi movies. Immerse yourself in the vibrant world of Indian cinema with our curated collection of Bollywood blockbusters, regional treasures, and timeless classics.
+<!-- Embedded Gist -->
+### Version 2:
+<img src="https://media.giphy.com/media/sTdRdivmXb9El6uMzb/giphy.gif" style="width: 100vw">
+
+### Version 1:
+<img src="https://media.giphy.com/media/HBFbHqnvcv0eWhKjPF/giphy.gif" style="width:100vw;" alt="Alt Text">
 
 ### Features:
 
