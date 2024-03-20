@@ -2,7 +2,7 @@
 
 Welcome to Cinema Curry, your ultimate destination for exploring and acquiring Indian and Desi movies. Immerse yourself in the vibrant world of Indian cinema with our curated collection of Bollywood blockbusters, regional treasures, and timeless classics.
 
-[Live Demo of Cinema Curry](https://cinema-curry-mohammed.netlify.app) (work in-progress)
+[Live Demo of Cinema Curry](https://cinema-curry-mohammed.netlify.app) (official one is under a different domain; will be uploaded here on April 1st)
 
 <!-- Embedded Gist -->
 ### Version 2:
